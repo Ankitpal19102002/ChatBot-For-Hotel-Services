@@ -8,35 +8,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Chatbot popup styles */
-        .chat-popup {
-            display: none;
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            border: 1px solid #ccc;
-            z-index: 9;
-            max-width: 300px;
-            border-radius: 5px;
-            background-color: #fff;
-        }
-        .chat-popup iframe {
-            width: 100%;
-            height: 300px;
-            border: none;
-        }
-        .chat-popup .close-button {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            cursor: pointer;
-        }
-        .chat-button {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            z-index: 1000; /* Ensure it's above other elements */
-        }
+        
 
         /* Header and footer color gradient */
         header {
@@ -135,12 +107,7 @@
     
 
     
-    <button onclick="toggleChat()" class="btn btn-primary chat-button">Chat with Us</button>
-    <!-- Chatbot Popup -->
-    <div id="chat-popup" class="chat-popup">
-        <span class="close-button" onclick="toggleChat()">X</span>
-        <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/84ccf4c2-3b1f-4d3f-b5b8-5e157d080dcb"></iframe>
-    </div>
+    
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -148,11 +115,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-        // Toggle chat popup visibility
-        function toggleChat() {
-            var chatPopup = document.getElementById("chat-popup");
-            chatPopup.style.display = chatPopup.style.display === "block" ? "none" : "block";
-        }
+
 
         // Go back to previous page
         function goBack() {
