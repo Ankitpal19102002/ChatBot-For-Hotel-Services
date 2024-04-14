@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles can be added here */
+
+        /* Header and footer color gradient */
+        header {
+            background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+            color: white;
+            padding: 20px;
+        }
+
+        footer {
+            background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+            color: white;
+            padding: 20px;
+        }
+
+        .modal-content {
+            border-radius: 10px;
+        }
+
+        .btn-primary {
+            background-color: #667db6;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #5a6790;
+        }
+
+        .chat-popup {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-popup iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        .chat-popup .chat-popup-close {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+            color: #333;
+        }
+        .fixed-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000; /* Ensure it's above other elements */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Hotel Management System</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="room_booking.html">Book a Room</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="food_order.html">Order from Restaurant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Give Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="photo.html">Photo Gallery</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    
+
+    <div class="container mt-4">
+        <section>
+            <h2>Overview of the Hotel</h2>
+            <p>Welcome to WildWest Hotel, where the charm of the Old West meets the vibrant culture of Chennai. Situated in the heart of the city, our hotel offers a unique blend of rustic elegance and modern comforts, making it the perfect destination for both leisure and business travelers.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="image/hotelimg3.jpeg" alt="Hotel Exterior" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <img src="image/index_h1.jpeg" alt="Hotel Exterior" class="img-fluid rounded">
+                </div>
+            </div>
+            <br><br><p>WildWest Hotel, nestled in the vibrant heart of Chennai, seamlessly blends the rustic charm of the Old West with the modern comforts of a luxury hotel. Our centrally located establishment offers an oasis of tranquility amidst the bustling city streets. From elegantly appointed rooms to spacious suites, each accommodation exudes warmth and sophistication. Indulge in culinary delights at our onsite restaurant, where every dish is a culinary masterpiece. Unwind by the outdoor pool or rejuvenate your senses at the spa. With state-of-the-art meeting facilities and impeccable service, WildWest Hotel is the perfect destination for both leisure and business travelers seeking an unforgettable experience in Chennai.</p>
+        </section>
+
+        <section class="mt-4">
+            <div class="container">
+                <h2>Explore our Hotel Rooms</h2>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <br><br><br><p>Nestled amidst the bustling streets of Chennai, WildWest Hotel provides easy access to the city's major attractions, shopping centers, and business districts. Whether you're here for sightseeing or corporate meetings, our central location ensures convenience at every turn.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="image/room2.jpeg" alt="Hotel amenities" class="img-fluid rounded" style="width: 540px; height: 300px; margin-top: 20px;">
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <img src="image/room4.jpeg" alt="Hotel amenities" class="img-fluid rounded" style="width: 540px; height: 300px; margin-top: 20px;">
+                    </div>
+                    <div class="col-md-6">
+                        <br><br><br><p>Step into our well-appointed rooms and suites, where Western-inspired décor meets contemporary design. Each accommodation is equipped with plush bedding, modern amenities, and complimentary Wi-Fi, ensuring a comfortable and memorable stay for our guests</p>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#exampleModal1">Explore our Rooms</button>
+            </div>
+        </section>
+        
+
+        <section class="mt-4">
+            <div class="container">
+                <h2>Explore our Dinning</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <br><br><br><p>Indulge your taste buds at our onsite restaurants, where culinary delights from around the world await. From sizzling steaks to authentic Indian cuisine, our diverse dining options cater to every palate. Don't forget to unwind with a refreshing drink at our bar, the perfect spot to relax and socialize after a long day.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="image/restaurant1.jpeg" alt="Hotel amenities" class="img-fluid rounded" style="width: 540px; height: 300px; margin-top: 20px;">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="image/restaurant3.jpeg" alt="Hotel amenities" class="img-fluid rounded" style="width: 540px; height: 300px; margin-top: 20px;">
+                    </div>
+                    <div class="col-md-6">
+                        <br><br><br><p>Indulge in culinary delights at WildWest Hotel's onsite restaurant, where every dish is a fusion of flavors and cultures. Savor sizzling steaks, authentic Indian cuisine, and international favorites crafted with fresh, locally sourced ingredients. Our restaurant offers a warm and inviting ambiance, perfect for intimate dinners or casual gatherings with friends and family. Whether you're craving a hearty breakfast, a leisurely lunch, or a romantic dinner, our diverse menu caters to every palate. With impeccable service and a commitment to excellence, dining at WildWest Hotel promises to be a memorable experience for all guests.</p>
+                    </div>
+                    <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#exampleModal2">Order Food</button>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="mt-4">
+            <h2>Amenities Images</h2>
+            <p>At WildWest Hotel, we believe in catering to your every need. Take a dip in our outdoor pool, work up a sweat in the fitness center, or pamper yourself with a rejuvenating spa treatment. Our hotel also features state-of-the-art meeting and event spaces, ideal for conferences, weddings, and special occasions.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="image/hotel_amenities7.jpeg" alt="Hotel amenities" style="width: 540px; height: 300px; margin-top: 20px;">
+                </div>
+                <div class="col-md-6">
+                    <img src="image/hotel_amenities2.jpeg" alt="Hotel amenities" style="width: 540px; height: 300px; margin-top: 20px;">
+                </div>
+            </div>
+            <br>
+            <p>Experience genuine hospitality from the moment you arrive at WildWest Hotel. Our dedicated staff is committed to providing personalized service and ensuring that your stay exceeds expectations. Whether you need assistance with sightseeing recommendations or business services, we're here to make your stay memorable for all the right reasons.</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <img src="image/hotel_amenities3.jpeg" alt="Hotel amenities" style="width: 540px; height: 300px; margin-top: 20px;">
+                </div>
+                <div class="col-md-6">
+                    <img src="image/hotel_amenities6.jpeg" alt="Hotel amenities" style="width: 540px; height: 300px; margin-top: 20px;">
+                </div>
+            </div>
+            <br>
+            <p>Whether you're seeking adventure or relaxation, WildWest Hotel invites you to experience the best of both worlds in the heart of Chennai. Book your stay with us today and embark on a journey filled with comfort, convenience, and unforgettable moments.</p>
+            <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#exampleModal3">
+                Give Us a Feedback
+            </button>
+        </section>
+
+        <!-- Buttons to trigger each modal -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel1">Room Booking</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Click 'Confirm' to proceed to Room Booking page.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="window.location.href='room_booking.html'">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Modal 2 -->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel2">Food Order</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Click 'Confirm' to proceed to Food Order page.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="window.location.href='food_order.html'">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Modal 3 -->
+        <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel3">Feedback</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Click 'Confirm' to proceed to Feedback page.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="window.location.href='feedback.html'">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-4 text-center">
+        <div class="container">
+            <p>&copy; 2024 Hotel Management System. All rights reserved. RA2111003010796 Ankit Pal</p>
+        </div>
+    </footer>
+    
+    <button class="btn btn-primary fixed-button">Fixed Button</button>
+    
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
+    
+</body>
+</html>

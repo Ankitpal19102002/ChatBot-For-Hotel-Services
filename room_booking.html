@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Booking</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Chatbot popup styles */
+        .chat-popup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border: 1px solid #ccc;
+            z-index: 9;
+            max-width: 300px;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .chat-popup iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+        .chat-popup .close-button {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .chat-button {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000; /* Ensure it's above other elements */
+        }
+        header {
+            background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+            color: white;
+            padding: 20px;
+        }
+
+        footer {
+            background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+            color: white;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Hotel Management System</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="room_booking.html">Book a Room</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="food_order.html">Order from Restaurant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Give Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="photo.html">Photo Gallery</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="container">
+        <h1>Room Booking</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Image --><br>
+                <img src="image/room5.jpeg" alt="Booking Image" class="img-fluid">
+            </div>
+            <div class="col-md-6">
+                <!-- Booking Form -->
+                <form action="book_room.php" method="post"> <!-- Assuming you have a PHP script to handle room booking -->
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkin">Check-in Date:</label>
+                        <input type="date" class="form-control" id="checkin" name="checkin" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout">Check-out Date:</label>
+                        <input type="date" class="form-control" id="checkout" name="checkout" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Book Room</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <section class="mt-4">
+        <div class="container">
+            <h2>Explore our Hotel Rooms</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <br><br><br><p>Nestled amidst the bustling streets of Chennai, WildWest Hotel provides easy access to the city's major attractions, shopping centers, and business districts. Whether you're here for sightseeing or corporate meetings, our central location ensures convenience at every turn.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="image/room2.jpeg" alt="Hotel amenities" class="img-fluid rounded" style="width: 540px; height: 300px; margin-top: 20px;">
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <img src="image/room4.jpeg" alt="Hotel amenities" class="img-fluid rounded" style="width: 540px; height: 300px; margin-top: 20px;">
+                </div>
+                <div class="col-md-6">
+                    <br><br><br><p>Step into our well-appointed rooms and suites, where Western-inspired décor meets contemporary design. Each accommodation is equipped with plush bedding, modern amenities, and complimentary Wi-Fi, ensuring a comfortable and memorable stay for our guests</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+    <button onclick="toggleChat()" class="btn btn-primary chat-button">Chat with Us</button>
+    <!-- Chatbot Popup -->
+    <div id="chat-popup" class="chat-popup">
+        <span class="close-button" onclick="toggleChat()">X</span>
+        <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/84ccf4c2-3b1f-4d3f-b5b8-5e157d080dcb"></iframe>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Toggle chat popup visibility
+        function toggleChat() {
+            var chatPopup = document.getElementById("chat-popup");
+            chatPopup.style.display = chatPopup.style.display === "block" ? "none" : "block";
+        }
+
+        // Go back to previous page
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>
